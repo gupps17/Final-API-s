@@ -39,7 +39,7 @@ public class ProductTypeConverter implements DynamoDBTypeConverter<ArrayList<Str
 				    p1=object.get(i);
 				    f1=p1.getFList();
 				    int t=f1.size();
-				    System.out.println(t);
+				   // System.out.println(t);
 				   
 				        product = String.format("%s  %s  %s  %s", p1.getdate(), p1.getPd(),
 				            p1.getQty(),p1.getFList());
@@ -89,18 +89,16 @@ public class ProductTypeConverter implements DynamoDBTypeConverter<ArrayList<Str
 				String s3=s2[j];
 				
 				int t=s3.length();
-				System.out.println(t+"fuck");
-				System.out.println("_"+s3);
+			
 				int a=Character.getNumericValue(s3.charAt(t-1));
 				int b=Character.getNumericValue(s3.charAt(t-4));
-				System.out.println(a+"G");
-				System.out.println(b+"G");
+			
 				
 				f1.setid(b);
 				f1.setQty(a);
-				//System.out.println(f1+"flist");
+			
 				FList.add(f1);
-				System.out.println(FList+"flist");
+		
 				
 				
 			}
@@ -108,8 +106,8 @@ public class ProductTypeConverter implements DynamoDBTypeConverter<ArrayList<Str
 			PList.add(p1);
 			p1=null;
 			
-			//System.out.println(s2[1]);//System.out.println(s2[2]);
-			System.out.println("+"+s2.length);
+			
+		
 			
 			
 			

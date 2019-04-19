@@ -2,6 +2,7 @@
  * @author Ritu Gupta
   Activity has the Fullfiller class
   which describes the information about fullfiler
+  which is part of a product
   *
  */
 
