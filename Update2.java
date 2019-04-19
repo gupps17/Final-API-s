@@ -1,3 +1,23 @@
+/**
+ * @author Ritu Gupta
+  Activity has methods to update the wishlist
+  which contains
+   updating product quantity
+  updating Fullfiller Qty
+  adding fullfiller
+  deleting a fullfiller
+  adding a product
+  deleting a product
+  updating fullfiller Qty
+  *
+ */
+
+
+
+
+
+
+
 package com.amazonaws.aws_java_sdk;
 import java.io.IOException;
 import java.io.OutputStream;

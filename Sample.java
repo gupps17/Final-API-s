@@ -1,3 +1,18 @@
+
+/**
+ * @author Ritu Gupta
+  Activity has methods to create the Wishlist
+  and delete the Wishlist
+  *
+ */
+
+
+
+
+
+
+
+
 package com.amazonaws.aws_java_sdk;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -68,7 +83,7 @@ public class Sample  {
     	
       
     }
-    public static String deleteItem(String s1) {
+    public static String deleteUser(String s1) {
 
         Table table = dynamoDB.getTable(tableName);
 

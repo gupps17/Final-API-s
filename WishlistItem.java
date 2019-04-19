@@ -1,3 +1,16 @@
+/**
+ * @author Ritu Gupta
+  Activity has the wishlistItem class
+  which describes the information about a Wishlist of a user
+  Initially Wishlist can be empty
+  It also contains Product,which in turn contains fulllfiller
+  *
+ */
+
+
+
+
+
 package com.amazonaws.aws_java_sdk;
 import java.util.ArrayList;
 

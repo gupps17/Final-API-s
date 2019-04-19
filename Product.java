@@ -1,3 +1,15 @@
+/**
+ * @author Ritu Gupta
+  Activity has the Product class
+  which describes the information about a product
+  which is added in a wishlist
+  A product exists with a fullfiller.
+  *
+ */
+
+
+
+
 package com.amazonaws.aws_java_sdk;
 import java.util.Arrays;
 import java.util.HashMap;

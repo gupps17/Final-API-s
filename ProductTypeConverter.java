@@ -1,3 +1,19 @@
+/**
+ * @author Ritu Gupta
+  Activity has the  Mapper class
+ Allowing you to map your client-side classes to DynamoDB tables. 
+ In DynamoDBMapper, you define the relationship between items 
+ in a DynamoDB table and their corresponding object instances in the code.
+  *
+ */
+
+
+
+
+
+
+
+
 package com.amazonaws.aws_java_sdk;
 import java.util.ArrayList;
 import java.util.Map;

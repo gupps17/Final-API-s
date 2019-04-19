@@ -1,3 +1,17 @@
+/**
+ * @author Ritu Gupta
+  Activity has the Login module
+  *
+ */
+
+
+
+
+
+
+
+
+
 package com.amazonaws.aws_java_sdk;
 import java.io.IOException;
 import java.io.OutputStream;
