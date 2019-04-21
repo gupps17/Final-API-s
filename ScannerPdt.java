@@ -1,3 +1,9 @@
+/*
+  @author Amrutha Krishnamoorthy
+  API to scan through the database and fetch the URLs of the images from s3 bucket
+  */
+
+
 package com.amazonaws.samples;
 
 import java.io.IOException;
