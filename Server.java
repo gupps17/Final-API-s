@@ -31,6 +31,7 @@ public class Server {
 		server.createContext("/login", new Post());
 		server.createContext("/wishlist", new Post1());
 		server.createContext("/product", new Post2());
+		server.createContext("/show",new ScannerPdt());
 		server.setExecutor(null); // creates a default executor
 		server.start();
 		System.out.println("Started server");
