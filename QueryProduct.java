@@ -1,3 +1,12 @@
+/*
+	  @author Amrutha Krishnamoorthy
+	  API to query database provided product ID
+	  
+*/
+
+
+
+
 package com.amazonaws.samples;
 
 import java.io.IOException;
