@@ -1,7 +1,7 @@
 /* @author Amrutha Krishnamoorthy
 
-Activity has methods that has details
-  to fetch domain level object
+  methods with details
+  to fetch domain level objects
 */
 
 
