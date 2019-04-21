@@ -1,10 +1,3 @@
-/*
-	  @author Amrutha Krishnamoorthy
-	  Methods to fetch domain level object
-	  
-*/
-
-
 package com.amazonaws.samples;
 
 import java.io.BufferedReader;
@@ -19,10 +12,28 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.amazonaws.services.dynamodbv2.document.Item;
+import com.amazonaws.services.dynamodbv2.document.Table;
+import com.amazonaws.services.dynamodbv2.document.spec.ScanSpec;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Iterator;
+import com.amazonaws.services.dynamodbv2.document.Item;
 
+import com.amazonaws.regions.Regions;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.document.DynamoDB;
+import com.amazonaws.services.dynamodbv2.document.Item;
+import com.amazonaws.services.dynamodbv2.document.ItemCollection;
+import com.amazonaws.services.dynamodbv2.document.ScanOutcome;
+import com.amazonaws.services.dynamodbv2.document.Table;
+import com.amazonaws.services.dynamodbv2.document.spec.ScanSpec;
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
+import com.amazonaws.services.dynamodbv2.document.Item;
 public class Server {
 
 	public static void main(String[] args) throws Exception {
@@ -31,7 +42,7 @@ public class Server {
 		server.createContext("/login", new Post());
 		server.createContext("/wishlist", new Post1());
 		server.createContext("/product", new Post2());
-		server.createContext("/show",new ScannerPdt());
+		server.createContext("/show", new ScannerPdt());
 		server.setExecutor(null); // creates a default executor
 		server.start();
 		System.out.println("Started server");
@@ -52,7 +63,6 @@ public class Server {
 			String s2 = parameters.get("Password").toString();
 			System.out.println(s1);
 			System.out.println(s2);
-			System.out.println("Reached");
 			QueryUser temp=new QueryUser();
 			String response = "";
 			boolean r = temp.queryItem(s1, s2);
@@ -62,7 +72,7 @@ public class Server {
 			}
 
 			else {
-				response = "Invalid passwsord or username" + "\n";
+				response = "Invalid password or username" + "\n";
 			}
 			System.out.println(r);
 			he.sendResponseHeaders(200, response.length());
@@ -169,5 +179,24 @@ public class Server {
 		                          }
 		                 }
 		         }
-		}
-}
+    }
+   
+    static class MyHandler implements HttpHandler {
+        public void handle(HttpExchange t) throws IOException {
+          byte [] response = "Welcome Real's HowTo test page".getBytes();
+          Item please=new Item()
+        		   .withPrimaryKey("Id", 101) 
+        		   .withString("Nomenclature", "PolyBlaster 101") 
+        		   .withString("Description", "101 description") 
+        		   .withString("Category", "Hybrid Power Polymer Cutter")  
+        		   .withString("Make", "Brand – XYZ") 
+        		   .withNumber("Price", 50000) 
+        		   .withString("ProductCategory", "Laser Cutter") 
+        		   .withBoolean("Availability", true);
+          t.sendResponseHeaders(200,response.length);
+          OutputStream os = t.getResponseBody();
+          os.write(response);
+          os.close();
+        }
+      }
+    }
