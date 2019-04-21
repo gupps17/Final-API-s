@@ -1,3 +1,9 @@
+/*
+	  @author Amrutha Krishnamoorthy
+	  API to query database provided wishlist ID
+	  
+*/
+
 package com.amazonaws.samples;
 import java.io.IOException;
 import java.io.OutputStream;
