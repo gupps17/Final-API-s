@@ -1,3 +1,9 @@
+/*
+	  @author Amrutha Krishnamoorthy
+	  API to query database provided username and password ID
+	  
+*/
+
 package com.amazonaws.samples;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.regions.Regions;
