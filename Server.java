@@ -1,3 +1,10 @@
+/*
+	  @author Amrutha Krishnamoorthy
+	  Methods to fetch domain level object
+	  
+*/
+
+
 package com.amazonaws.samples;
 
 import java.io.BufferedReader;
