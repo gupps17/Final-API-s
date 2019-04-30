@@ -1,9 +1,3 @@
-/*
-  @author Amrutha Krishnamoorthy
-  API to scan through the database and fetch the URLs of the images from s3 bucket
-  */
-
-
 package com.amazonaws.samples;
 
 import java.io.IOException;
@@ -22,7 +16,7 @@ import com.amazonaws.services.dynamodbv2.document.spec.ScanSpec;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.amazonaws.services.dynamodbv2.document.Item;
-
+import com.google.gson.Gson;
 public class ScannerPdt implements HttpHandler {
 
 	static AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().withRegion(Regions.US_EAST_1).build();
@@ -66,8 +60,10 @@ public class ScannerPdt implements HttpHandler {
 
 			String response1;
 			response1 = scanner();
-
+			Gson g = new Gson();
+			String str = g.toJson(response1);
 			System.out.println(response1);
+			System.out.println(str);
 			response = response1.getBytes();
 			t.sendResponseHeaders(200, response.length);
 
